@@ -1,0 +1,27 @@
+{
+  "name": "pokemon-api",
+  "version": "0.1.0",
+  "description": "API to display pokemon information from Veekuns pokdex",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaMouse404/pokemon-api.git"
+  },
+  "keywords": [
+    "pokemon",
+    "veekun",
+    "pokedex"
+  ],
+  "author": "Christopher Sidebottom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DaMouse404/pokemon-api/issues"
+  },
+  "homepage": "https://github.com/DaMouse404/pokemon-api#readme",
+  "dependencies": {
+    "koa": "^1.0.0"
+  }
+}
