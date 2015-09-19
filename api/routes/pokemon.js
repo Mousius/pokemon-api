@@ -4,9 +4,9 @@ var db = require('../lib/db');
 
 function getPokemon(id) {
     var criteria = isFinite(id) ? { 'pokemon.species_id': id } : { 'pokemon.identifier': id.toLowerCase() };
-    
+
     criteria.local_language_id = 9;
-    
+
     return db.first('pokemon.*', 'pokemon_species_names.name')
         .from('pokemon')
         .innerJoin('pokemon_species_names', 'pokemon_species_names.pokemon_species_id', '=', 'pokemon.species_id')
@@ -17,7 +17,7 @@ function getPokemon(id) {
             } else {
                 return getStats(row.id).then(function (stats) {
                     row.stats = stats;
-                    
+
                     return row;
                 });
             }
@@ -38,7 +38,8 @@ function getStats(id) {
 }
 
 module.exports = [
-    router.get('/pokemon/:id', function *(id){
+    router.get('/v1/pokemon/:id', function *(id) {
+        this.set('Cache-Control', 'max-age=60,stale-if-error=600');
         this.body = yield getPokemon(id);
     })
 ];

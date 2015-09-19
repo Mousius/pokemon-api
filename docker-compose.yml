@@ -1,7 +1,11 @@
+frontend:
+  build: frontend
+  ports:
+   - 80:80
+  links:
+   - api
 api:
   build: api
-  ports:
-   - "3000:3000"
   env_file:
    - ./database.env
   links:
