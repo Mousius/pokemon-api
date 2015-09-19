@@ -1,0 +1,6 @@
+{
+    "database": {
+        "client": "pg",
+        "connection": "postgresql://postgres:woof@127.0.0.1/pokedex"
+    }
+}
