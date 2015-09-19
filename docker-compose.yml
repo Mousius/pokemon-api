@@ -1,0 +1,12 @@
+api:
+  build: api
+  ports:
+   - "3000:3000"
+  env_file:
+   - ./database.env
+  links:
+   - pokedex
+pokedex:
+  build: pokedex
+  env_file:
+   - ./database.env

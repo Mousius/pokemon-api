@@ -1,4 +1,16 @@
-var config = require('config');
+var util = require('util');
 var knex = require('knex');
 
-module.exports = knex(config.get('database'));
+function buildConnectionString() {
+    return util.format(
+        "postgresql://%s:%s@pokedex/%s",
+        process.env.POSTGRES_USER,
+        process.env.POSTGRES_PASSWORD,
+        process.env.POSTGRES_DB
+    );
+}
+
+module.exports = knex({
+    client: "pg",
+    connection: buildConnectionString()
+});

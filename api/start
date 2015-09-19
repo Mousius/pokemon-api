@@ -1,0 +1,3 @@
+#!/bin/bash
+while ! nc -z pokedex 5432; do sleep 0.1; done; echo 'The server is up!'
+npm start
