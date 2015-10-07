@@ -39,7 +39,6 @@ function getStats(id) {
 
 module.exports = [
     router.get('/v1/pokemon/:id', function *(id) {
-        this.set('Cache-Control', 'max-age=60,stale-if-error=600');
         this.body = yield getPokemon(id);
     })
 ];

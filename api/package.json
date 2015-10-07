@@ -28,7 +28,7 @@
     "http-errors": "^1.3.1",
     "knex": "^0.8.6",
     "koa": "^1.0.0",
-    "koa-error": "^1.1.3",
+    "koa-cache-control": "^1.0.0",
     "koa-route": "^2.4.2",
     "node-config": "0.0.2",
     "pg": "^4.4.1"
